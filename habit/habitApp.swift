@@ -1,5 +1,5 @@
 //
-//  habitApp.swift
+//  HabitApp.swift
 //  habit
 //
 //  Created by Jean Camargo on 21/12/22.
@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct habitApp: App {
+struct HabitApp: App {
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            SplashView(viewModel: SplashViewModel())
         }
     }
 }
