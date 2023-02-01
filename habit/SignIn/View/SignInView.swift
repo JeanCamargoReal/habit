@@ -17,44 +17,56 @@ struct SignInView: View {
     @State var navigationHidden = true
 
     var body: some View {
-        NavigationView {
-            ScrollView(showsIndicators: false) {
-                VStack (alignment: .center, spacing: 20) {
-                    Spacer(minLength: 36)
+        ZStack {
+            if case SignInUIState.goToHomeScreen = viewModel.uiState {
+                Text("tela principal")
+            } else {
+                NavigationView {
+                    ScrollView(showsIndicators: false) {
+                        VStack (alignment: .center, spacing: 20) {
+                            Spacer(minLength: 36)
 
-                    VStack(alignment: .center, spacing: 8) {
-                        Image("logo")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(.horizontal, 48)
+                            VStack(alignment: .center, spacing: 8) {
+                                Image("logo")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .padding(.horizontal, 48)
 
-                        Text("Login")
-                            .foregroundColor(.orange)
-                            .font(Font.system(.title).bold())
-                            .padding(.bottom, 8)
+                                Text("Login")
+                                    .foregroundColor(.orange)
+                                    .font(Font.system(.title).bold())
+                                    .padding(.bottom, 8)
 
-                        numberField
+                                numberField
 
-                        passwordField
+                                passwordField
 
-                        enterButton
+                                enterButton
 
-                        registerLink
+                                registerLink
 
-                        Text("Copyright @YYY")
-                            .foregroundColor(.gray)
-                            .font(Font.system(size: 16).bold())
-                            .padding(.top, 16)
+                                Text("Copyright @YYY")
+                                    .foregroundColor(.gray)
+                                    .font(Font.system(size: 16).bold())
+                                    .padding(.top, 16)
 
+                            }
+                        }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .padding(.horizontal, 32)
+                    .background(Color.white)
+                    .navigationTitle("Login")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarHidden(navigationHidden)
+                }
+                .onAppear {
+                    self.navigationHidden = true
+                }
+                .onDisappear {
+                    self.navigationHidden = false
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding(.horizontal, 32)
-            .background(.white)
-            .navigationTitle("Login")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarHidden(navigationHidden)
         }
     }
 }
@@ -76,7 +88,7 @@ extension SignInView {
 extension SignInView {
     var enterButton: some View {
         Button("Entrar") {
-            //acontece o evendo de click
+            viewModel.login(email: email, password: password)
         }
     }
 }
