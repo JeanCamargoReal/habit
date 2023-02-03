@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SplashView: View {
     @ObservedObject var viewModel: SplashViewModel
-
+    
     var body: some View {
         Group {
             switch viewModel.uiState {
@@ -39,7 +39,7 @@ extension SplashView {
                 .padding(20)
                 .background(Color.white)
                 .ignoresSafeArea()
-
+            
             if let error = error {
                 Text("")
                     .alert(isPresented: .constant(true)) {
