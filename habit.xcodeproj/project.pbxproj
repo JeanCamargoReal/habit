@@ -12,6 +12,7 @@
 		C5323FA2298D488A006FE9D7 /* SignInViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5323FA1298D488A006FE9D7 /* SignInViewRouter.swift */; };
 		C5323FA8298D4912006FE9D7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5323FA7298D4912006FE9D7 /* HomeView.swift */; };
 		C5323FAA298D491D006FE9D7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5323FA9298D491D006FE9D7 /* HomeViewModel.swift */; };
+		C5323FB1298D78C3006FE9D7 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5323FB0298D78C3006FE9D7 /* SignUpView.swift */; };
 		C55741A32981D84D0076D8B4 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55741A22981D84D0076D8B4 /* SplashViewModel.swift */; };
 		C55741A92981EE040076D8B4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55741A82981EE040076D8B4 /* SignInView.swift */; };
 		C55741AB2981EE450076D8B4 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55741AA2981EE450076D8B4 /* SignInViewModel.swift */; };
@@ -28,6 +29,7 @@
 		C5323FA1298D488A006FE9D7 /* SignInViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewRouter.swift; sourceTree = "<group>"; };
 		C5323FA7298D4912006FE9D7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C5323FA9298D491D006FE9D7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C5323FB0298D78C3006FE9D7 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C55741A22981D84D0076D8B4 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		C55741A82981EE040076D8B4 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C55741AA2981EE450076D8B4 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -118,6 +120,38 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C5323FAB298D787F006FE9D7 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				C5323FAE298D7899006FE9D7 /* Model */,
+				C5323FAD298D7894006FE9D7 /* View */,
+				C5323FAC298D7888006FE9D7 /* ViewModel */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		C5323FAC298D7888006FE9D7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C5323FAD298D7894006FE9D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5323FB0298D78C3006FE9D7 /* SignUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5323FAE298D7899006FE9D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C55741A42981ED980076D8B4 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +206,7 @@
 		C5C0D4052953BE4C00806908 /* habit */ = {
 			isa = PBXGroup;
 			children = (
+				C5323FAB298D787F006FE9D7 /* SignUp */,
 				C5323FA3298D48D5006FE9D7 /* Home */,
 				C55741A42981ED980076D8B4 /* SignIn */,
 				C5206F13295B768000C5F78B /* Splash */,
@@ -264,6 +299,7 @@
 				C5323FAA298D491D006FE9D7 /* HomeViewModel.swift in Sources */,
 				C5C0D4072953BE4C00806908 /* habitApp.swift in Sources */,
 				C55741AB2981EE450076D8B4 /* SignInViewModel.swift in Sources */,
+				C5323FB1298D78C3006FE9D7 /* SignUpView.swift in Sources */,
 				C5323FA8298D4912006FE9D7 /* HomeView.swift in Sources */,
 				C5323FA2298D488A006FE9D7 /* SignInViewRouter.swift in Sources */,
 				C5206F18295B76CD00C5F78B /* SplashView.swift in Sources */,

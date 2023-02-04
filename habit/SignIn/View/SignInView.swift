@@ -110,7 +110,10 @@ extension SignInView {
                 .padding(.top, 48)
 
             ZStack {
-                NavigationLink(destination: Text("Tela de cadastro"), tag: 1, selection: $action, label: { EmptyView()})
+                NavigationLink(destination: viewModel.signUpView(),
+                               tag: 1,
+                               selection: $action,
+                               label: { EmptyView()})
 
                 Button("Realize seu cadastro") {
                     self.action = 1
