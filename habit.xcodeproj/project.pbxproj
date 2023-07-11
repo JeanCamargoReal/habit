@@ -13,6 +13,7 @@
 		C51DF57329917F63000E8AC2 /* SignUpViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51DF57229917F63000E8AC2 /* SignUpViewRouter.swift */; };
 		C5206F18295B76CD00C5F78B /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5206F17295B76CD00C5F78B /* SplashView.swift */; };
 		C5206F1A295B775C00C5F78B /* SplashUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5206F19295B775C00C5F78B /* SplashUIState.swift */; };
+		C531A4192A5DD947002314A5 /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C531A4182A5DD947002314A5 /* CustomTextFieldStyle.swift */; };
 		C5323FA2298D488A006FE9D7 /* SignInViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5323FA1298D488A006FE9D7 /* SignInViewRouter.swift */; };
 		C5323FA8298D4912006FE9D7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5323FA7298D4912006FE9D7 /* HomeView.swift */; };
 		C5323FAA298D491D006FE9D7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5323FA9298D491D006FE9D7 /* HomeViewModel.swift */; };
@@ -25,6 +26,7 @@
 		C5C0D4072953BE4C00806908 /* habitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C0D4062953BE4C00806908 /* habitApp.swift */; };
 		C5C0D40B2953BE4E00806908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5C0D40A2953BE4E00806908 /* Assets.xcassets */; };
 		C5C0D40E2953BE4E00806908 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5C0D40D2953BE4E00806908 /* Preview Assets.xcassets */; };
+		C5C3FCF42A5C468600DFF3FC /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C3FCF32A5C468600DFF3FC /* EditTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,7 @@
 		C51DF57229917F63000E8AC2 /* SignUpViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewRouter.swift; sourceTree = "<group>"; };
 		C5206F17295B76CD00C5F78B /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C5206F19295B775C00C5F78B /* SplashUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUIState.swift; sourceTree = "<group>"; };
+		C531A4182A5DD947002314A5 /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		C5323FA1298D488A006FE9D7 /* SignInViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewRouter.swift; sourceTree = "<group>"; };
 		C5323FA7298D4912006FE9D7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C5323FA9298D491D006FE9D7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		C5C0D4062953BE4C00806908 /* habitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habitApp.swift; sourceTree = "<group>"; };
 		C5C0D40A2953BE4E00806908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5C0D40D2953BE4E00806908 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C5C3FCF32A5C468600DFF3FC /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 		C51DF56A2991738D000E8AC2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C5C3FCF22A5C463F00DFF3FC /* View */,
 				C51DF56B299173B6000E8AC2 /* Model */,
 			);
 			path = Common;
@@ -109,6 +114,14 @@
 				C55741AC2981EF7B0076D8B4 /* SplashViewRouter.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C531A4172A5DD92E002314A5 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				C531A4182A5DD947002314A5 /* CustomTextFieldStyle.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 		C5323FA3298D48D5006FE9D7 /* Home */ = {
@@ -253,6 +266,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C5C3FCF22A5C463F00DFF3FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C531A4172A5DD92E002314A5 /* Style */,
+				C5C3FCF32A5C468600DFF3FC /* EditTextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,6 +359,8 @@
 				C51DF56D299173C8000E8AC2 /* Gender.swift in Sources */,
 				C55741A32981D84D0076D8B4 /* SplashViewModel.swift in Sources */,
 				C5BAD201298AFA79004FFAAB /* SignInUIState.swift in Sources */,
+				C531A4192A5DD947002314A5 /* CustomTextFieldStyle.swift in Sources */,
+				C5C3FCF42A5C468600DFF3FC /* EditTextView.swift in Sources */,
 				C55741AD2981EF7B0076D8B4 /* SplashViewRouter.swift in Sources */,
 				C55741A92981EE040076D8B4 /* SignInView.swift in Sources */,
 			);
