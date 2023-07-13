@@ -25,13 +25,15 @@ struct SignUpView: View {
                 VStack(alignment: .center) {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Cadastro")
-                            .foregroundColor(.black)
+                            .foregroundColor(Color("textColor"))
                             .font(Font.system(.title).bold())
                             .padding(.bottom, 8)
 
                         fullNameField
 
                         emailField
+
+						passwordField
 
                         documentField
 
@@ -70,43 +72,69 @@ struct SignUpView_Previews: PreviewProvider {
 
 extension SignUpView {
     var fullNameField: some View {
-        TextField("", text: $fullName)
-            .border(Color.black)
+		EditTextView(text: $fullName,
+					 placeholder: "Entre com seu nome completo *",
+					 keyboard: .alphabet,
+					 error: "e-mail inválido",
+					 failure: fullName.count < 3)
     }
 }
 
 extension SignUpView {
     var emailField: some View {
-        TextField("", text: $email)
-            .border(Color.black)
+		EditTextView(text: $email,
+					 placeholder: "Entre com seu e-mail *",
+					 keyboard: .emailAddress,
+					 error: "e-mail inválido",
+					 failure: !email.isEmail())
     }
 }
 
 extension SignUpView {
     var passwordField: some View {
-        SecureField("", text: $password)
-            .border(Color.orange)
+		EditTextView(text: $password,
+					 placeholder: "Entre com sua senha *",
+					 keyboard: .emailAddress,
+					 error: "senha deve ter ao menos 8 caracteres",
+					 failure: password.count < 8,
+					 isSecure: true)
     }
 }
 
 extension SignUpView {
     var documentField: some View {
-        TextField("", text: $document)
-            .border(Color.black)
+		EditTextView(text: $document,
+					 placeholder: "Entre com seu cpf *",
+					 keyboard: .numberPad,
+					 error: "CPF inválido",
+					 failure: document.count != 11)
+
+		// TODO: mask para CPF
+		// TODO: isDisabled
     }
 }
 
 extension SignUpView {
     var phoneField: some View {
-        TextField("", text: $phone)
-            .border(Color.black)
+		EditTextView(text: $document,
+					 placeholder: "Entre com seu celular *",
+					 keyboard: .numberPad,
+					 error: "Entre com o DDD + 8 ou 9 digitos",
+					 failure: phone.count < 10 || self.phone.count >= 12)
+
+		// TODO: mask para telefone
     }
 }
 
 extension SignUpView {
     var birthdayField: some View {
-        TextField("", text: $birthday)
-            .border(Color.black)
+		EditTextView(text: $document,
+					 placeholder: "Entre com data de nascimento *",
+					 keyboard: .numberPad,
+					 error: "Data de ver ser dd/MM/yyyy",
+					 failure: birthday.count != 10)
+
+		// TODO: mask para aniversário
     }
 }
 
@@ -126,9 +154,19 @@ extension SignUpView {
 
 extension SignUpView {
     var saveButton: some View {
-        Button("Realize seu cadastro") {
-            viewModel.signUp()
-        }
+		LoadingButtonView(action: {
+			viewModel.signUp()
+		},
+						  text: "Entrar",
+						  showProgress: self.viewModel.uiState == SignUpUIState.loading,
+						  disabled: !email.isEmail() ||
+						  password.count < 8 ||
+						  fullName.count < 3 ||
+						  document.count != 11 ||
+						  phone.count < 10 ||
+						  phone.count >= 12 ||
+						  birthday.count != 10)
+
     }
 }
 
