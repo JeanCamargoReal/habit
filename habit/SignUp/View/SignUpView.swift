@@ -9,14 +9,6 @@ import SwiftUI
 
 struct SignUpView: View {
 
-    @State var fullName = ""
-    @State var email = ""
-    @State var password = ""
-    @State var document = ""
-    @State var phone = ""
-    @State var birthday = ""
-    @State var gender = Gender.male
-
     @ObservedObject var viewModel: SignUpViewModel
 
     var body: some View {
@@ -72,42 +64,42 @@ struct SignUpView_Previews: PreviewProvider {
 
 extension SignUpView {
     var fullNameField: some View {
-		EditTextView(text: $fullName,
+		EditTextView(text: $viewModel.fullName,
 					 placeholder: "Entre com seu nome completo *",
 					 keyboard: .alphabet,
 					 error: "e-mail inválido",
-					 failure: fullName.count < 3)
+					 failure: viewModel.fullName.count < 3)
     }
 }
 
 extension SignUpView {
     var emailField: some View {
-		EditTextView(text: $email,
+		EditTextView(text: $viewModel.email,
 					 placeholder: "Entre com seu e-mail *",
 					 keyboard: .emailAddress,
 					 error: "e-mail inválido",
-					 failure: !email.isEmail())
+					 failure: !viewModel.email.isEmail())
     }
 }
 
 extension SignUpView {
     var passwordField: some View {
-		EditTextView(text: $password,
+		EditTextView(text: $viewModel.password,
 					 placeholder: "Entre com sua senha *",
 					 keyboard: .emailAddress,
 					 error: "senha deve ter ao menos 8 caracteres",
-					 failure: password.count < 8,
+					 failure: viewModel.password.count < 8,
 					 isSecure: true)
     }
 }
 
 extension SignUpView {
     var documentField: some View {
-		EditTextView(text: $document,
+		EditTextView(text: $viewModel.document,
 					 placeholder: "Entre com seu cpf *",
 					 keyboard: .numberPad,
 					 error: "CPF inválido",
-					 failure: document.count != 11)
+					 failure: viewModel.document.count != 11)
 
 		// TODO: mask para CPF
 		// TODO: isDisabled
@@ -116,11 +108,11 @@ extension SignUpView {
 
 extension SignUpView {
     var phoneField: some View {
-		EditTextView(text: $document,
+		EditTextView(text: $viewModel.document,
 					 placeholder: "Entre com seu celular *",
 					 keyboard: .numberPad,
 					 error: "Entre com o DDD + 8 ou 9 digitos",
-					 failure: phone.count < 10 || self.phone.count >= 12)
+					 failure: viewModel.phone.count < 10 || self.viewModel.phone.count >= 12)
 
 		// TODO: mask para telefone
     }
@@ -128,11 +120,11 @@ extension SignUpView {
 
 extension SignUpView {
     var birthdayField: some View {
-		EditTextView(text: $document,
+		EditTextView(text: $viewModel.document,
 					 placeholder: "Entre com data de nascimento *",
 					 keyboard: .numberPad,
 					 error: "Data de ver ser dd/MM/yyyy",
-					 failure: birthday.count != 10)
+					 failure: viewModel.birthday.count != 10)
 
 		// TODO: mask para aniversário
     }
@@ -140,7 +132,7 @@ extension SignUpView {
 
 extension SignUpView {
     var genderField: some View {
-        Picker("Gender", selection: $gender) {
+		Picker("Gender", selection: $viewModel.gender) {
             ForEach(Gender.allCases, id: \.self) { value in
                 Text(value.rawValue)
                     .tag(value)
@@ -159,13 +151,13 @@ extension SignUpView {
 		},
 						  text: "Entrar",
 						  showProgress: self.viewModel.uiState == SignUpUIState.loading,
-						  disabled: !email.isEmail() ||
-						  password.count < 8 ||
-						  fullName.count < 3 ||
-						  document.count != 11 ||
-						  phone.count < 10 ||
-						  phone.count >= 12 ||
-						  birthday.count != 10)
+						  disabled: !viewModel.email.isEmail() ||
+						  viewModel.password.count < 8 ||
+						  viewModel.fullName.count < 3 ||
+						  viewModel.document.count != 11 ||
+						  viewModel.phone.count < 10 ||
+						  viewModel.phone.count >= 12 ||
+						  viewModel.birthday.count != 10)
 
     }
 }
