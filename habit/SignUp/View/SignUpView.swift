@@ -108,7 +108,7 @@ extension SignUpView {
 
 extension SignUpView {
     var phoneField: some View {
-		EditTextView(text: $viewModel.document,
+		EditTextView(text: $viewModel.phone,
 					 placeholder: "Entre com seu celular *",
 					 keyboard: .numberPad,
 					 error: "Entre com o DDD + 8 ou 9 digitos",
@@ -120,7 +120,7 @@ extension SignUpView {
 
 extension SignUpView {
     var birthdayField: some View {
-		EditTextView(text: $viewModel.document,
+		EditTextView(text: $viewModel.birthday,
 					 placeholder: "Entre com data de nascimento *",
 					 keyboard: .numberPad,
 					 error: "Data de ver ser dd/MM/yyyy",

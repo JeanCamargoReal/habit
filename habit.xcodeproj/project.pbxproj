@@ -29,6 +29,7 @@
 		C5C0D40B2953BE4E00806908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5C0D40A2953BE4E00806908 /* Assets.xcassets */; };
 		C5C0D40E2953BE4E00806908 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5C0D40D2953BE4E00806908 /* Preview Assets.xcassets */; };
 		C5C3FCF42A5C468600DFF3FC /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C3FCF32A5C468600DFF3FC /* EditTextView.swift */; };
+		C5F41BCF2A697DBB008D1021 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F41BCE2A697DBB008D1021 /* WebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		C5C0D40A2953BE4E00806908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5C0D40D2953BE4E00806908 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C5C3FCF32A5C468600DFF3FC /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
+		C5F41BCE2A697DBB008D1021 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		C51DF56A2991738D000E8AC2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C5F41BCD2A697DA1008D1021 /* Network */,
 				C531A41A2A5DEE9D002314A5 /* Lang */,
 				C5C3FCF22A5C463F00DFF3FC /* View */,
 				C51DF56B299173B6000E8AC2 /* Model */,
@@ -289,6 +292,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C5F41BCD2A697DA1008D1021 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C5F41BCE2A697DBB008D1021 /* WebService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -368,6 +379,7 @@
 				C5323FB1298D78C3006FE9D7 /* SignUpView.swift in Sources */,
 				C5323FA8298D4912006FE9D7 /* HomeView.swift in Sources */,
 				C5323FA2298D488A006FE9D7 /* SignInViewRouter.swift in Sources */,
+				C5F41BCF2A697DBB008D1021 /* WebService.swift in Sources */,
 				C51DF57129917EF7000E8AC2 /* SignUpViewModel.swift in Sources */,
 				C51DF56F29917EAF000E8AC2 /* SignUpUIState.swift in Sources */,
 				C5206F18295B76CD00C5F78B /* SplashView.swift in Sources */,
