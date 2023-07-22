@@ -22,25 +22,9 @@ enum WebService {
 		return URLRequest(url: url)
 	}
 
-	static func postUser(fullname: String,
-						 email: String,
-						 password: String,
-						 document: String,
-						 phone: String,
-						 birthday: String,
-						 gender: Int) {
+	static func postUser(request: SignUpRequest) {
 
-		let json: [String : Any] = [
-			"name": fullname,
-			"email": email,
-			"document": document,
-			"phone": phone,
-			"gender": gender,
-			"birthday": birthday,
-			"password": password
-		]
-
-		let jsonData = try? JSONSerialization.data(withJSONObject: json)
+		guard let jsonData = try? JSONEncoder().encode(request) else { return } 
 
 		guard var urlRequest = completeUrl(path: .postUser) else { return }
 
@@ -51,16 +35,16 @@ enum WebService {
 
 		let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
 			guard let data = data, error == nil else {
-				print(error)
+				print(error!)
 
 				return
 			}
 
-			print(String(data: data, encoding: .utf8))
+			print(String(data: data, encoding: .utf8)!)
 
 			print("response\n")
 
-			print(response)
+			print(response!)
 
 			if let r  = response as? HTTPURLResponse {
 				print(r.statusCode)
