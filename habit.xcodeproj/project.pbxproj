@@ -31,6 +31,7 @@
 		C5C0D40E2953BE4E00806908 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5C0D40D2953BE4E00806908 /* Preview Assets.xcassets */; };
 		C5C3FCF42A5C468600DFF3FC /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C3FCF32A5C468600DFF3FC /* EditTextView.swift */; };
 		C5F41BCF2A697DBB008D1021 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F41BCE2A697DBB008D1021 /* WebService.swift */; };
+		C5F5298F2A716CDB00D28D78 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F5298E2A716CDB00D28D78 /* SignUpResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		C5C0D40D2953BE4E00806908 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C5C3FCF32A5C468600DFF3FC /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
 		C5F41BCE2A697DBB008D1021 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		C5F5298E2A716CDB00D28D78 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 			children = (
 				C51DF56E29917EAF000E8AC2 /* SignUpUIState.swift */,
 				C576979F2A6C548D00B8E057 /* SignUpRequest.swift */,
+				C5F5298E2A716CDB00D28D78 /* SignUpResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5F5298F2A716CDB00D28D78 /* SignUpResponse.swift in Sources */,
 				C5206F1A295B775C00C5F78B /* SplashUIState.swift in Sources */,
 				C5323FAA298D491D006FE9D7 /* HomeViewModel.swift in Sources */,
 				C5C0D4072953BE4C00806908 /* habitApp.swift in Sources */,
