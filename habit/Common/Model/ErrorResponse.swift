@@ -13,4 +13,4 @@ struct ErrorResponse: Decodable {
 	enum CodingKeys: String, CodingKey {
 		case detail
 	}
-	}
+}
