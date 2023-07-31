@@ -24,6 +24,7 @@
 		C55741A92981EE040076D8B4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55741A82981EE040076D8B4 /* SignInView.swift */; };
 		C55741AB2981EE450076D8B4 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55741AA2981EE450076D8B4 /* SignInViewModel.swift */; };
 		C55741AD2981EF7B0076D8B4 /* SplashViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55741AC2981EF7B0076D8B4 /* SplashViewRouter.swift */; };
+		C55B0E8D2A782A46001FF5C9 /* SignInErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55B0E8C2A782A46001FF5C9 /* SignInErrorResponse.swift */; };
 		C57697A02A6C548D00B8E057 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C576979F2A6C548D00B8E057 /* SignUpRequest.swift */; };
 		C5A6A75F2A742E14002C2A48 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A6A75E2A742E14002C2A48 /* SignInRequest.swift */; };
 		C5A6A7612A742FE3002C2A48 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A6A7602A742FE3002C2A48 /* SignInResponse.swift */; };
@@ -55,6 +56,7 @@
 		C55741A82981EE040076D8B4 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C55741AA2981EE450076D8B4 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		C55741AC2981EF7B0076D8B4 /* SplashViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewRouter.swift; sourceTree = "<group>"; };
+		C55B0E8C2A782A46001FF5C9 /* SignInErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInErrorResponse.swift; sourceTree = "<group>"; };
 		C576979F2A6C548D00B8E057 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		C5A6A75E2A742E14002C2A48 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		C5A6A7602A742FE3002C2A48 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				C5BAD200298AFA79004FFAAB /* SignInUIState.swift */,
 				C5A6A75E2A742E14002C2A48 /* SignInRequest.swift */,
 				C5A6A7602A742FE3002C2A48 /* SignInResponse.swift */,
+				C55B0E8C2A782A46001FF5C9 /* SignInErrorResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				C5323FAA298D491D006FE9D7 /* HomeViewModel.swift in Sources */,
 				C5C0D4072953BE4C00806908 /* habitApp.swift in Sources */,
 				C531A41C2A5DEF1B002314A5 /* String+Extension.swift in Sources */,
+				C55B0E8D2A782A46001FF5C9 /* SignInErrorResponse.swift in Sources */,
 				C51DF57329917F63000E8AC2 /* SignUpViewRouter.swift in Sources */,
 				C5A6A75F2A742E14002C2A48 /* SignInRequest.swift in Sources */,
 				C55741AB2981EE450076D8B4 /* SignInViewModel.swift in Sources */,

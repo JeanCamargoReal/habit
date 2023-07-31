@@ -7,10 +7,12 @@
 
 import Foundation
 
+
 enum WebService {
 
 	enum Endpoint: String {
 		case base = "https://habitplus-api.tiagoaguiar.co"
+
 		case postUser = "/users"
 		case login = "/auth/login"
 	}
@@ -18,7 +20,7 @@ enum WebService {
 	enum NetworkError {
 		case badRequest
 		case notFound
-		case unautorized
+		case unauthorized
 		case internalServerError
 	}
 
@@ -33,13 +35,10 @@ enum WebService {
 	}
 
 	private static func completeUrl(path: Endpoint) -> URLRequest? {
-		guard let url = URL(string: "\(Endpoint.base.rawValue)\(path.rawValue)") else {
-			return nil
-		}
+		guard let url = URL(string: "\(Endpoint.base.rawValue)\(path.rawValue)") else { return nil }
 
 		return URLRequest(url: url)
 	}
-
 
 	private static func call(path: Endpoint,
 							 contentType: ContentType,
@@ -54,20 +53,21 @@ enum WebService {
 		urlRequest.httpBody = data
 
 		let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+			// roda em background (Non-MainThread)
 			guard let data = data, error == nil else {
-				print(error!)
-
+				print(error)
 				completion(.failure(.internalServerError, nil))
-
 				return
 			}
 
-			if let r  = response as? HTTPURLResponse {
+			if let r = response as? HTTPURLResponse {
 				switch r.statusCode {
 					case 400:
 						completion(.failure(.badRequest, data))
+						break
 					case 401:
-						completion(.failure(.unautorized, data))
+						completion(.failure(.unauthorized, data))
+						break
 					case 200:
 						completion(.success(data))
 					default:
@@ -75,25 +75,29 @@ enum WebService {
 				}
 			}
 
-			print(String(data: data, encoding: .utf8)!)
+			print(String(data: data, encoding: .utf8))
 			print("response\n")
-			print(response!)
+			print(response)
+
 		}
 
 		task.resume()
 	}
 
-	private static func call<T: Encodable>(path: Endpoint, body: T, completion: @escaping (Result) -> Void) {
+	private static func call<T: Encodable>(path: Endpoint,
+										   body: T,
+										   completion: @escaping (Result) -> Void) {
 		guard let jsonData = try? JSONEncoder().encode(body) else { return }
 
 		call(path: path, contentType: .json, data: jsonData, completion: completion)
 	}
 
-	private static func call (path: Endpoint, params: [URLQueryItem], completion: @escaping (Result) -> Void) {
+	private static func call(path: Endpoint,
+							 params: [URLQueryItem],
+							 completion: @escaping (Result) -> Void) {
 		guard let urlRequest = completeUrl(path: path) else { return }
 
 		guard let absoluteURL = urlRequest.url?.absoluteString else { return }
-
 		var components = URLComponents(string: absoluteURL)
 		components?.queryItems = params
 
@@ -104,22 +108,17 @@ enum WebService {
 	}
 
 	static func postUser(request: SignUpRequest, completion: @escaping (Bool?, ErrorResponse?) -> Void) {
-		call(path: .postUser, params: [
-			URLQueryItem(name: "username", value: request.email),
-			URLQueryItem(name: "password", value: request.password)]) { result in
-
+		call(path: .postUser, body: request) { result in
 			switch result {
 				case .failure(let error, let data):
 					if let data = data {
-						if error == .unautorized {
+						if error == .badRequest {
 							let decoder = JSONDecoder()
 							let response = try? decoder.decode(ErrorResponse.self, from: data)
-
 							completion(nil, response)
 						}
 					}
 					break
-
 				case .success(let data):
 					completion(true, nil)
 					break
@@ -127,26 +126,25 @@ enum WebService {
 		}
 	}
 
-	static func login(request: SignInRequest, completion: @escaping (SignInResponse?, ErrorResponse?) -> Void) {
-		call(path: .login, body: request) { result in
+	static func login(request: SignInRequest, completion: @escaping (SignInResponse?, SignInErrorResponse?) -> Void) {
+		call(path: .login, params: [
+			URLQueryItem(name: "username", value: request.email),
+			URLQueryItem(name: "password", value: request.password)
+		]) { result in
 			switch result {
 				case .failure(let error, let data):
 					if let data = data {
-						if error == .badRequest {
+						if error == .unauthorized {
 							let decoder = JSONDecoder()
-							let response = try? decoder.decode(ErrorResponse.self, from: data)
-
+							let response = try? decoder.decode(SignInErrorResponse.self, from: data)
 							completion(nil, response)
 						}
 					}
 					break
-
 				case .success(let data):
 					let decoder = JSONDecoder()
 					let response = try? decoder.decode(SignInResponse.self, from: data)
-
 					completion(response, nil)
-					
 					break
 			}
 		}
