@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A774CD632AA21C12008A65A8 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A774CD622AA21C12008A65A8 /* SignInInteractor.swift */; };
+		A774CD652AA21F07008A65A8 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A774CD642AA21F07008A65A8 /* RemoteDataSource.swift */; };
 		C51DF56D299173C8000E8AC2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51DF56C299173C8000E8AC2 /* Gender.swift */; };
 		C51DF56F29917EAF000E8AC2 /* SignUpUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51DF56E29917EAF000E8AC2 /* SignUpUIState.swift */; };
 		C51DF57129917EF7000E8AC2 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51DF57029917EF7000E8AC2 /* SignUpViewModel.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A774CD622AA21C12008A65A8 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
+		A774CD642AA21F07008A65A8 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		C51DF56C299173C8000E8AC2 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		C51DF56E29917EAF000E8AC2 /* SignUpUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUIState.swift; sourceTree = "<group>"; };
 		C51DF57029917EF7000E8AC2 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -82,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A774CD612AA21C05008A65A8 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A774CD622AA21C12008A65A8 /* SignInInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		C51DF56A2991738D000E8AC2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +238,7 @@
 		C55741A42981ED980076D8B4 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				A774CD612AA21C05008A65A8 /* Interactor */,
 				C55741A62981EDBF0076D8B4 /* Model */,
 				C55741A52981EDB60076D8B4 /* ViewModel */,
 				C55741A72981EDCC0076D8B4 /* View */,
@@ -314,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				C5F41BCE2A697DBB008D1021 /* WebService.swift */,
+				A774CD642AA21F07008A65A8 /* RemoteDataSource.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -391,6 +405,7 @@
 				C5F5298F2A716CDB00D28D78 /* SignUpResponse.swift in Sources */,
 				C5206F1A295B775C00C5F78B /* SplashUIState.swift in Sources */,
 				C5323FAA298D491D006FE9D7 /* HomeViewModel.swift in Sources */,
+				A774CD652AA21F07008A65A8 /* RemoteDataSource.swift in Sources */,
 				C5C0D4072953BE4C00806908 /* habitApp.swift in Sources */,
 				C531A41C2A5DEF1B002314A5 /* String+Extension.swift in Sources */,
 				C55B0E8D2A782A46001FF5C9 /* SignInErrorResponse.swift in Sources */,
@@ -400,6 +415,7 @@
 				C5323FB1298D78C3006FE9D7 /* SignUpView.swift in Sources */,
 				C5323FA8298D4912006FE9D7 /* HomeView.swift in Sources */,
 				C5323FA2298D488A006FE9D7 /* SignInViewRouter.swift in Sources */,
+				A774CD632AA21C12008A65A8 /* SignInInteractor.swift in Sources */,
 				C5F41BCF2A697DBB008D1021 /* WebService.swift in Sources */,
 				C51DF57129917EF7000E8AC2 /* SignUpViewModel.swift in Sources */,
 				C51DF56F29917EAF000E8AC2 /* SignUpUIState.swift in Sources */,
@@ -551,7 +567,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -581,7 +597,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
